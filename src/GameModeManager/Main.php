@@ -4,37 +4,37 @@ namespace GameModeManager;
 
 use pocketmine\plugin\PluginBase;
 use pocketmine\player\Player;
+use pocketmine\player\GameMode;
 use pocketmine\command\Command;
 use pocketmine\command\CommandSender;
-use pocketmine\world\GameMode;
 
 class Main extends PluginBase{
 
-    public function onEnable(): void{
+    public function onEnable() : void{
         $this->saveDefaultConfig();
     }
 
-    public function onCommand(CommandSender $sender, Command $command, string $label, array $args): bool{
+    public function onCommand(CommandSender $sender, Command $command, string $label, array $args) : bool{
 
         switch($command->getName()){
 
             case "gmc":
-                return $this->changeGamemode($sender,$args,GameMode::CREATIVE(),"creative","gmm.gmc");
+                return $this->changeGamemode($sender, $args, GameMode::CREATIVE(), "creative", "gmm.gmc");
 
             case "gms":
-                return $this->changeGamemode($sender,$args,GameMode::SURVIVAL(),"survival","gmm.gms");
+                return $this->changeGamemode($sender, $args, GameMode::SURVIVAL(), "survival", "gmm.gms");
 
             case "gma":
-                return $this->changeGamemode($sender,$args,GameMode::ADVENTURE(),"adventure","gmm.gma");
+                return $this->changeGamemode($sender, $args, GameMode::ADVENTURE(), "adventure", "gmm.gma");
 
             case "gmsp":
-                return $this->changeGamemode($sender,$args,GameMode::SPECTATOR(),"spectator","gmm.gmsp");
+                return $this->changeGamemode($sender, $args, GameMode::SPECTATOR(), "spectator", "gmm.gmsp");
         }
 
         return false;
     }
 
-    private function changeGamemode(CommandSender $sender, array $args, GameMode $mode, string $type, string $permission): bool{
+    private function changeGamemode(CommandSender $sender, array $args, GameMode $mode, string $type, string $permission) : bool{
 
         $msg = $this->getConfig()->get("messages");
 
@@ -43,7 +43,7 @@ class Main extends PluginBase{
             return true;
         }
 
-        // Target player
+        // If player argument provided
         if(isset($args[0])){
 
             $target = $this->getServer()->getPlayerByPrefix($args[0]);
@@ -61,7 +61,7 @@ class Main extends PluginBase{
             return true;
         }
 
-        // Self change
+        // Self gamemode change
         if($sender instanceof Player){
 
             $sender->setGamemode($mode);
@@ -70,6 +70,7 @@ class Main extends PluginBase{
             return true;
 
         }else{
+
             $sender->sendMessage("Use: /" . $type . " <player>");
         }
 
