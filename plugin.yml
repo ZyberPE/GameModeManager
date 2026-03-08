@@ -1,0 +1,32 @@
+name: GameModeManager
+main: GameModeManager\Main
+version: 1.0.0
+api: 5.0.0
+author: ZyberPE
+
+commands:
+  gmc:
+    description: Set gamemode creative
+    permission: gmm.gmc
+
+  gms:
+    description: Set gamemode survival
+    permission: gmm.gms
+
+  gma:
+    description: Set gamemode adventure
+    permission: gmm.gma
+
+  gmsp:
+    description: Set gamemode spectator
+    permission: gmm.gmsp
+
+permissions:
+  gmm.gmc:
+    default: op
+  gmm.gms:
+    default: op
+  gmm.gma:
+    default: op
+  gmm.gmsp:
+    default: op
