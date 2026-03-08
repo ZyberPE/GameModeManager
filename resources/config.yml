@@ -1,0 +1,21 @@
+messages:
+
+  no-permission: "§cYou do not have permission to use this command."
+
+  player-not-found: "§cPlayer not found."
+
+  creative-self: "§aYour gamemode has been set to Creative."
+  creative-other: "§aYou set {player}'s gamemode to Creative."
+  creative-target: "§eYour gamemode was updated to Creative."
+
+  survival-self: "§aYour gamemode has been set to Survival."
+  survival-other: "§aYou set {player}'s gamemode to Survival."
+  survival-target: "§eYour gamemode was updated to Survival."
+
+  adventure-self: "§aYour gamemode has been set to Adventure."
+  adventure-other: "§aYou set {player}'s gamemode to Adventure."
+  adventure-target: "§eYour gamemode was updated to Adventure."
+
+  spectator-self: "§aYour gamemode has been set to Spectator."
+  spectator-other: "§aYou set {player}'s gamemode to Spectator."
+  spectator-target: "§eYour gamemode was updated to Spectator."
